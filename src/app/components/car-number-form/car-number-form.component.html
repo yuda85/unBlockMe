@@ -1,0 +1,30 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Car Number</mat-label>
+    <input
+      type="number"
+      matInput
+      [formControl]="carNumberControl"
+      placeholder="12-345-67"
+      minlength="7"
+    />
+
+    <mat-error *ngIf="carNumberControl.hasError('minLength')">
+      Please enter a valid car Number
+    </mat-error>
+    <mat-error *ngIf="carNumberControl.hasError('required')">
+      Car Number is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <div>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="carNumberControl.status === 'INVALID'"
+      (click)="onSubmit()"
+    >
+      Submit
+    </button>
+  </div>
+</form>
+{{ carNumberControl.value?.length }}
