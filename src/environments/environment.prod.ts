@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'Micahels-domain.com',
+  baseUrl: 'https://whoblockedme.herokuapp.com/',
 };
